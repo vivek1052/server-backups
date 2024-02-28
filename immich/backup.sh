@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo "Starting backup"
+echo "$POSTGRES_HOST Starting backup"

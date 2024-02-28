@@ -8,5 +8,7 @@ mkdir -p /upload/database-backup
 
 borg init --encryption=none /backup/immich-borg
 
+export PGPASSWORD=$POSTGRES_PASSWORD
+
 pg_dumpall -h $POSTGRES_HOST -c -U $POSTGRES_USER | gzip > /upload/database-backup/immich-database.sql.gz
 

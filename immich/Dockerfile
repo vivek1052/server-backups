@@ -9,9 +9,6 @@ ENV POSTGRES_PASSWORD postgres
 # Cron Details
 ENV CRON_TIME "*/1 * * * *"
 
-# Timezone
-ENV TZ "Asia/Kolkata"
-
 # Path Details
 ENV UPLOAD_LOCATION="/upload"
 ENV BACKUP_PATH="/backup"

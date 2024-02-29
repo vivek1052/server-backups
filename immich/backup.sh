@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Starting backup at $(TZ=$TZ date)"
+echo "Starting backup at $(date)"
 
 mkdir -p "$BACKUP_PATH/immich-borg"
 

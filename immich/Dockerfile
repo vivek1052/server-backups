@@ -13,6 +13,7 @@ ENV CRON_TIME "*/1 * * * *"
 ENV UPLOAD_LOCATION="/upload"
 ENV BACKUP_PATH="/backup"
 
+
 RUN apk add --no-cache postgresql14-client borgbackup busybox-initscripts openrc wget gzip tzdata
 
 VOLUME [ "/upload", "/backup" ]

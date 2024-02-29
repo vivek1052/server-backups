@@ -14,7 +14,7 @@ ENV UPLOAD_LOCATION="/upload"
 ENV BACKUP_PATH="/backup"
 
 #Borg 
-BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK yes
+ENV BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK yes
 
 
 RUN apk add --no-cache postgresql14-client borgbackup busybox-initscripts openrc wget gzip tzdata

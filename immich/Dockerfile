@@ -18,9 +18,8 @@ ENV BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK yes
 ENV BORG_BASE_DIR /borg-data
 
 
-RUN apk add --no-cache postgresql14-client borgbackup busybox-initscripts openrc wget gzip tzdata
+RUN apk add --no-cache postgresql14-client borgbackup busybox-initscripts openrc wget gzip
 
-VOLUME [ "/upload", "/backup", "/borg-data" ]
 
 RUN wget https://raw.githubusercontent.com/vivek1052/server-backups/main/immich/backup.sh -O /backup-script && chmod +x /backup-script
 

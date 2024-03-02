@@ -6,6 +6,12 @@ mkdir -p "$BACKUP_PATH/immich-borg"
 
 mkdir -p "$UPLOAD_LOCATION/database-backup"
 
+mkdir -p $BORG_DATA_PATH
+
+export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=yes
+
+export BORG_BASE_DIR=$BORG_DATA_PATH
+
 borg init --encryption=none "$BACKUP_PATH/immich-borg"
 
 export PGPASSWORD=$POSTGRES_PASSWORD

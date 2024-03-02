@@ -17,7 +17,7 @@ ENV BACKUP_PATH="/backup"
 ENV BORG_DATA_PATH /borg-data
 
 
-RUN apk add --no-cache postgresql14-client borgbackup busybox-initscripts openrc wget gzip
+RUN apk add --no-cache postgresql14-client borgbackup busybox-initscripts openrc wget gzip tzdata
 
 
 RUN wget https://raw.githubusercontent.com/vivek1052/server-backups/main/immich/backup.sh -O /backup-script && chmod +x /backup-script

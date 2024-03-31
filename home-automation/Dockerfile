@@ -13,4 +13,4 @@ RUN apk add --no-cache borgbackup openrc wget tzdata
 
 RUN wget https://raw.githubusercontent.com/vivek1052/server-backups/main/home-automation/backup.sh -O /backup-script && chmod +x /backup-script
 
-RUN echo "55 2 * * * /backup-script > /etc/crontabs/abc
+RUN echo "55 2 * * * /backup-script" > /etc/crontabs/abc

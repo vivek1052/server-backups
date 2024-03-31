@@ -5,8 +5,9 @@ ENV UPLOAD_LOCATION="/upload"
 ENV BACKUP_PATH="/backup"
 
 # Borg
+RUN mkdir /borg-data 
+RUN chown abc -R /borg-data
 VOLUME /borg-data
-RUN chown abc:abc -R /borg-data
 
 
 RUN apk add --no-cache borgbackup openrc wget tzdata

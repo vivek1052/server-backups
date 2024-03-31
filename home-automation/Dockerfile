@@ -16,4 +16,4 @@ RUN wget https://raw.githubusercontent.com/vivek1052/server-backups/main/home-au
 
 RUN wget https://raw.githubusercontent.com/vivek1052/server-backups/main/home-automation/entrypoint.sh -O /entrypoint && chmod +x /entrypoint
 
-CMD ["/entrypoint"]
+ENTRYPOINT ["/entrypoint"]

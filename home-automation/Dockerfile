@@ -1,4 +1,4 @@
-FROM alpine:3.16
+FROM  ghcr.io/linuxserver/baseimage-alpine:3.16
 
 # Cron Details
 ENV CRON_TIME "*/1 * * * *"
@@ -10,7 +10,7 @@ ENV BACKUP_PATH="/backup"
 # Borg
 ENV BORG_DATA_PATH /borg-data
 
-RUN apk add --no-cache borgbackup busybox-initscripts openrc wget gzip tzdata
+RUN apk add --no-cache borgbackup openrc wget tzdata
 
 RUN wget https://raw.githubusercontent.com/vivek1052/server-backups/main/home-automation/backup.sh -O /backup-script && chmod +x /backup-script
 

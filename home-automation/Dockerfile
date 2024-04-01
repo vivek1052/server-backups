@@ -6,7 +6,7 @@ ENV BACKUP_PATH="/backup"
 
 # Borg
 RUN mkdir -p /borg-data/.cache /borg-data/.config 
-RUN chown abc -R /borg-data
+RUN chown 1000 -R /borg-data
 VOLUME /borg-data
 
 

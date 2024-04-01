@@ -5,7 +5,7 @@ ENV UPLOAD_LOCATION="/upload"
 ENV BACKUP_PATH="/backup"
 
 # Borg
-RUN mkdir /borg-data 
+RUN mkdir -p /borg-data/.cache /borg-data/.config 
 RUN chown abc -R /borg-data
 VOLUME /borg-data
 

@@ -12,7 +12,7 @@ export PGPASSWORD=$POSTGRES_PASSWORD
 
 echo "Installing dependencies"
 
-apk add postgresql14-client gzip -y
+apk add postgresql14-client gzip
 
 echo "Starting database dump"
 

@@ -1,15 +1,13 @@
 #!/bin/sh
 
-echo "Running custom script with $PUID and $PGID"
+echo "Running custom script with cron schedule $CRON_TIME"
 
-echo "Create borg-data directory"
+echo "Create upload and backup directories"
+mkdir -p $BACKUP_PATH $UPLOAD_LOCATION
 
-mkdir -p /borg-data
+echo "Borg environment variables"
+export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=yes
+export BORG_BASE_DIR=/borg-data
 
-echo "Change owner of borg-data directory"
-
-chown -R $PUID:$PGID /borg-data
-
-echo "Scheduling cronjob with $CRON_TIME"
-
-echo "$CRON_TIME /backup-script" > /etc/crontabs/abc
+echo "Scheduling backup script"
+echo "$CRON_TIME /backup-script" > /etc/crontabs/root

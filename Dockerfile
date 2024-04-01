@@ -5,6 +5,7 @@ ENV UPLOAD_LOCATION="/upload"
 ENV BACKUP_PATH="/backup"
 
 #Cron detail
+ENV DOCKER_MODS=linuxserver/mods:universal-cron
 ENV CRON_TIME="00 01 * * *"
 
 # Borg

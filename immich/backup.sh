@@ -10,10 +10,6 @@ borg init --encryption=none "$BACKUP_PATH/immich-borg"
 
 export PGPASSWORD=$POSTGRES_PASSWORD
 
-echo "Installing dependencies"
-
-apk add postgresql14-client gzip
-
 echo "Starting database dump"
 
 pg_dumpall -h $POSTGRES_HOST -p $POSTGRES_PORT -c -U $POSTGRES_USER | gzip > $UPLOAD_LOCATION/database-backup/immich-database.sql.gz

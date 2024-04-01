@@ -6,12 +6,6 @@ mkdir -p "$BACKUP_PATH/immich-borg"
 
 mkdir -p "$UPLOAD_LOCATION/database-backup"
 
-mkdir -p $BORG_DATA_PATH
-
-export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=yes
-
-export BORG_BASE_DIR=$BORG_DATA_PATH
-
 borg init --encryption=none "$BACKUP_PATH/immich-borg"
 
 export PGPASSWORD=$POSTGRES_PASSWORD
@@ -28,7 +22,7 @@ borg create --stats $BACKUP_PATH/immich-borg::{now} $UPLOAD_LOCATION --exclude $
 
 echo "Pruning old backups"
 
-borg prune --keep-weekly=4 --keep-monthly=3 $BACKUP_PATH/immich-borg
+borg prune $BORG_PRUNE_OPTIONS $BACKUP_PATH/immich-borg
 
 echo "Compacting backup"
 

@@ -8,8 +8,8 @@ RUN mkdir -p /source /repository /custom-cont-init.d
 
 #Cron detail
 ENV CRON_TIME="00 01 * * *"
-ENV PRE_COMMAND="echo 'Pre command'"
-ENV POST_COMMAND="echo 'Post command'"
+ENV PRE_COMMANDS="echo 'Pre command'"
+ENV POST_COMMANDS="echo 'Post command'"
 
 # Borg
 VOLUME [ "/borg-data" ]

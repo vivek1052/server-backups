@@ -1,7 +1,7 @@
 FROM  ghcr.io/linuxserver/baseimage-alpine:3.16
 
 #Install Dependencies
-RUN apk add --no-cache postgresql14-client borgbackup gzip
+RUN apk add --no-cache borgbackup gzip
 
 # Path Details
 RUN mkdir -p /source /repository /custom-cont-init.d

@@ -11,7 +11,7 @@ echo "Running any Pre Commands"
 sh -c "$PRE_COMMANDS"
 
 echo "Starting borg backup"
-borg create --stats /repository::{now} /source $BORG_OPTIONS
+borg create --stats /repository::{now} /source $BORG_CREATE_OPTIONS
 
 echo "Pruning old backups"
 borg prune $BORG_PRUNE_OPTIONS /repository

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "###################################################################################################\n"
+echo -e "################################################################################################### \n"
 
 echo "Starting backup at $(date)"
 
@@ -8,10 +8,10 @@ echo "Initializing borg repository"
 borg init --encryption=none /repository
 
 echo "Running any Pre Commands"
-sh -c "$PRE_COMMANDS"
+sh -c $PRE_COMMANDS
 
 echo "Starting borg backup"
-borg create --stats /repository::{now} /source/. $BORG_OPTIONS
+borg create --stats /repository::{now} /source $BORG_OPTIONS
 
 echo "Pruning old backups"
 borg prune $BORG_PRUNE_OPTIONS /repository
@@ -20,8 +20,8 @@ echo "Compacting backup"
 borg compact /repository
 
 echo "Running any Post Commands"
-sh -c "$POST_COMMANDS"
+sh -c $POST_COMMANDS
 
-echo "Backup Complete\n"
+echo -e "Backup Complete \n"
 
-echo "###################################################################################################\n"
+echo -e "################################################################################################### \n"
